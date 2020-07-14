@@ -23,6 +23,16 @@ export class AuthService {
       );
   }
 
+  loggedIn(){
+    const token = localStorage.getItem('token');
+    if (token === '' || token === null){
+      return false;
+    }
+    else {
+      return true;
+    }
+  }
+
   register(model: any){
     return this.http.post(this.baseUrl + 'register', model);
   }

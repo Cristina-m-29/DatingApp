@@ -1,0 +1,29 @@
+img.img-thumbnail {
+    height: 100px;
+    min-width: 100px !important;
+    margin-bottom: 4px;
+}
+
+.btn-m-t {
+    display: flex;
+    margin: auto;
+}
+
+.photos-list {
+    border-bottom: 1px solid #b3b3b3;
+    margin: 3px;
+}
+
+.nv-file-over {
+    border: dotted 3px red;
+}
+
+input[type=file] {
+    color: transparent;
+}
+
+.my-drop-zone {
+    width: 200px;
+    height: 120px;
+    margin-right: 35px;
+}

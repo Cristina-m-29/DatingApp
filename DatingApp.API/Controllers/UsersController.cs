@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Security.Claims;
+using System.Globalization;
 using System;
 using DatingApp.API.Data;
 using DatingApp.API.Dtos;
@@ -46,6 +47,14 @@ namespace DatingApp.API.Controllers
 
             var userFromRepo = await _repo.GetUser(id);
 
+            var currentYear = DateTime.Now.Year.ToString();
+            var bithdayYear = Int32.Parse(currentYear);
+            bithdayYear = bithdayYear - userForUpdateDto.Age;           
+
+            DateTime DateOfBirth = new DateTime(bithdayYear, DateTime.Now.Month, DateTime.Now.Day, new GregorianCalendar());
+            
+            userForUpdateDto.DateOfBirth = DateOfBirth;
+            
             _mapper.Map(userForUpdateDto, userFromRepo);
 
             if(await _repo.SaveAll()) {

@@ -1,3 +1,10 @@
 .dropdown-toggle, .dropdown-item{
     cursor: pointer;
 }
+
+.img-thumbnail-nav{
+    max-height: 33px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    margin-right: 3px;
+}

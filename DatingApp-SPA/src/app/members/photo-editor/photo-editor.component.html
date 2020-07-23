@@ -1,9 +1,18 @@
 <div class="div row photos-list pb-3">
-  <div class="col-sm-2" *ngFor="let photo of photos">
+  <div class="col-sm-2 mr-2" *ngFor="let photo of photos">
     <img class="img-thumbnail p-1 " src="{{photo.url}}" alt="photo">
     <div class="btn-m-t text-center mb-2">
-      <button type="button" class="btn btn-dark">Main</button>
-      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o"></i></button>
+      <button type="button" class="btn btn-md" 
+              (click)="setMainPhoto(photo)" 
+              [disabled]="photo.isMain"
+              [ngClass]="photo.isMain ? 'btn-success active' : 'btn-dark'">
+              Main
+      </button>
+      <button type="button" class="btn btn-danger" 
+              (click)="deletePhoto(photo.id)"
+              [disabled]="photo.isMain">
+              <i class="fa fa-trash-o"></i>
+      </button>
     </div>
   </div>
 </div>

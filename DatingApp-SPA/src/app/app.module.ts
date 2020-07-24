@@ -10,9 +10,8 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
-import { NgModule  } from '@angular/core';
-
-
+import { TimeAgoPipe } from 'time-ago-pipe';
+import { NgModule, Pipe, PipeTransform  } from '@angular/core';
 
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
@@ -37,6 +36,13 @@ export function tokenGet() {
    return localStorage.getItem('token');
 }
 
+// tslint:disable-next-line: use-pipe-transform-interface
+@Pipe({
+   name: 'timeAgo',
+   pure: false
+})
+export class TimeAgoExtendsPipe extends TimeAgoPipe {}
+
 @NgModule({
    declarations: [
       AppComponent,
@@ -49,6 +55,7 @@ export function tokenGet() {
       MemberCardComponent,
       MemberDetailComponent,
       MemberEditComponent,
+      TimeAgoExtendsPipe,
       PhotoEditorComponent
    ],
    imports: [

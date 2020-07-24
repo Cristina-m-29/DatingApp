@@ -24,8 +24,8 @@ export class AuthService {
     this.photoUrl.next(photoUrl);
   }
 
-  login(model: any){
-    return this.http.post(this.baseUrl + 'login', model)
+  login(userR: User){
+    return this.http.post(this.baseUrl + 'login', userR)
       .pipe(
         map((response: any) => {
           const user = response;
@@ -45,8 +45,8 @@ export class AuthService {
     return !this.jwtHelper.isTokenExpired(token);
   }
 
-  register(model: any){
-    return this.http.post(this.baseUrl + 'register', model);
+  register(user: User){
+    return this.http.post(this.baseUrl + 'register', user);
   }
 
   logout(){

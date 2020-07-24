@@ -12,7 +12,7 @@
   <div class="row">
     <div class="col-sm-4">
       <div class="card">
-        <img class="card-img-top img-thumbnail" src="{{photoUrl}}" alt="{{user.knownAs}}">
+        <img class="card-img-top img-thumbnail" src="{{photoUrl  || '../../../assets/user.png'}}" alt="{{user.knownAs}}">
         <div class="card-body">
           <div>
             <strong>Location:</strong>
@@ -24,11 +24,11 @@
           </div>
           <div>
             <strong>Last active:</strong>
-            <p>{{user.lastActive}}</p>
+            <p>{{user.lastActive | date:'medium'}}</p>
           </div>
           <div>
             <strong>Member since:</strong>
-            <p>{{user.created}}</p>
+            <p>{{user.created  | date:'medium'}}</p>
           </div>
         </div>
         <div class="card-footer">
@@ -41,9 +41,7 @@
         <tabset class="member-tabset">
           <tab heading="Edit profile">
             <form #editForm="ngForm" id="editForm" (ngSubmit)="updateUser()">
-              <h4>Username</h4>
-              <textarea name="username" rows="6" class="form-control" [(ngModel)]="user.username"></textarea>
-              <div class="d-flex mt-2 mb-1">
+              <div class="d-flex mb-1">
                 <div class="mr-3" style="width: 50%;">
                   <h4>Age</h4>
                   <input style="width: 100%;" type="number" class="form-control" name="age" [(ngModel)]="user.age">

@@ -1,17 +1,19 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxGalleryModule } from '@kolkov/ngx-gallery';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { FileUploadModule } from 'ng2-file-upload';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { JwtModule } from '@auth0/angular-jwt';
 import { TimeAgoPipe } from 'time-ago-pipe';
-import { NgModule, Pipe, PipeTransform  } from '@angular/core';
+import { NgModule, Pipe } from '@angular/core';
 
 import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
@@ -63,6 +65,8 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
       BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
+      PaginationModule.forRoot(),
+      ButtonsModule.forRoot(),
       ReactiveFormsModule,
       BsDatepickerModule.forRoot(),
       TabsModule.forRoot(),

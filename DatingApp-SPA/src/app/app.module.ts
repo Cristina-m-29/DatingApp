@@ -33,6 +33,7 @@ import { PhotoEditorComponent } from './members/photo-editor/photo-editor.compon
 import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListResolver } from './_resolvers/lists-resolver';
+import { MesssagesResolver } from './_resolvers/messages-resolver';
 
 
 export function tokenGet() {
@@ -91,7 +92,8 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
       MemberListResolver,
       MemberEditResolver,
       PreventUnsavedChanges,
-      ListResolver
+      ListResolver,
+      MesssagesResolver
    ],
    bootstrap: [
       AppComponent

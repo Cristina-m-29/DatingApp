@@ -6,3 +6,7 @@ table{
     max-height: 30px;
     margin-right: 0.6em;
 }
+
+td {
+    vertical-align: middle;
+}

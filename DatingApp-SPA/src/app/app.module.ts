@@ -34,6 +34,7 @@ import { MemberEditResolver } from './_resolvers/member-edit-resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 import { ListResolver } from './_resolvers/lists-resolver';
 import { MesssagesResolver } from './_resolvers/messages-resolver';
+import { MemberMessagesComponent } from './members/member-messages/member-messages.component';
 
 
 export function tokenGet() {
@@ -60,7 +61,8 @@ export class TimeAgoExtendsPipe extends TimeAgoPipe {}
       MemberDetailComponent,
       MemberEditComponent,
       TimeAgoExtendsPipe,
-      PhotoEditorComponent
+      PhotoEditorComponent,
+      MemberMessagesComponent
    ],
    imports: [
       BrowserModule,

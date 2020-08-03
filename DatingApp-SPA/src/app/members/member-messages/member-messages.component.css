@@ -1,0 +1,50 @@
+.card{
+    border: none;
+}
+
+.card-body{
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow-y: scroll;
+    height: 450px;
+}
+
+.chat {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chat li{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted #B3A9A9;
+}
+
+.rounded-circle {
+    max-width: 50px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.card-footer{
+    margin: 20px 20px 10px 20px;
+    padding: 0;
+    border: none;
+}
+
+input[type="text"]{
+    height: 35px;
+}
+
+.send-btn{
+    height: 38px;
+}
+
+.chat-body{
+    position: relative;
+    width: 100%;
+}

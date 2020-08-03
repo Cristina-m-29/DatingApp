@@ -13,3 +13,7 @@
     background-color: #ffffff;
     border-top: none;
 }
+
+.tab-pane{
+    padding: 0;
+}
